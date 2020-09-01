@@ -29,6 +29,17 @@ namespace CanIBuyBeer
             Console.WriteLine("Vilken promillehalt har du?");
             decimal promille = Convert.ToDecimal(Console.ReadLine());
 
+            bool canIBuyBeer = age > 17 && location == "krogen" && leg == "J" && promille < 1.0m ||
+                age > 20 && location == "systemet" && leg == "J" && promille < 1.0m;
+            if (canIBuyBeer == true)
+            {
+                Console.WriteLine("Du kan köpa Öl.");
+            }
+            else
+            {
+                Console.WriteLine("Du kan inte köpa Öl.");
+            }
+
             //if (age > 17 && locationA == "krogen" && leg == "J" && promille < 1.0m ||
             //    age > 19 && locationB == "systemet" && leg == "J" && promille < 1.0m)
             //{
@@ -38,17 +49,6 @@ namespace CanIBuyBeer
             //{
             //    Console.WriteLine("Nej du får inte köpa Sharaab.");
             //}
-
-            bool canIBuyBeer = age > 17 && location == "krogen" && leg == "J" && promille < 1.0m ||
-                age > 19 && location == "systemet" && leg == "J" && promille < 1.0m;
-            if (canIBuyBeer == true)
-            {
-                Console.WriteLine("Du kan köpa Öl.");
-            }
-            else
-            {
-                Console.WriteLine("Du kan inte köpa Öl.");
-            }
         }
     }
 }
